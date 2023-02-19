@@ -1,2 +1,6 @@
-package FlowerStore;public enum SortOrder {
+package FlowerStore;
+
+public enum SortOrder {
+    DESC,
+    ASC
 }
