@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b213211-3f62-455f-838e-85928c6ca09f" name="Changes" comment="">
+    <list default="true" id="1b213211-3f62-455f-838e-85928c6ca09f" name="Changes" comment="Second commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetFlower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetFlower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetFlowerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetFlowerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/HousePlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/HousePlant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/HousePlantType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/HousePlantType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/ItemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/ItemManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/Pot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/Pot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/PriceRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/PriceRange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/Soil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/Soil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/SoilType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/SoilType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/SortOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/SortOrder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +97,14 @@
       <option name="presentableId" value="Default" />
       <updated>1676043805110</updated>
     </task>
+    <task id="LOCAL-00001" summary="Second commit">
+      <created>1676819975649</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676819975649</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +117,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

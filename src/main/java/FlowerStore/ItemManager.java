@@ -29,9 +29,31 @@ public class ItemManager {
             case "itemName":
                 if (order.equals(SortOrder.ASC)) {
                     Collections.sort(this.items, (i1, i2) -> (i1.getItemName().compareTo(i2.getItemName())));
+                    System.out.println("Sorted by itemName (ASC)");
                 } else if (order.equals(SortOrder.DESC)) {
                     Collections.sort(this.items, (i1, i2) -> (i1.getItemName().compareTo(i2.getItemName())));
                     Collections.reverse(this.items);
+                    System.out.println("Sorted by itemName (DESC)");
+                }
+                break;
+            case "price":
+                if (order.equals(SortOrder.ASC)) {
+                    Collections.sort(this.items, (i1, i2) -> i1.getPrice() - i2.getPrice());
+                    System.out.println("Sorted by price (ASC)");
+                } else if (order.equals(SortOrder.DESC)) {
+                    Collections.sort(this.items, (i1, i2) -> i1.getPrice() - i2.getPrice());
+                    Collections.reverse(this.items);
+                    System.out.println("Sorted by price (DESC)");
+                }
+                break;
+            case "description":
+                if (order.equals(SortOrder.ASC)) {
+                    Collections.sort(this.items, (i1, i2) -> (i1.getDescription().compareTo(i2.getDescription())));
+                    System.out.println("Sorted by description (ASC)");
+                } else if (order.equals(SortOrder.DESC)) {
+                    Collections.sort(this.items, (i1, i2) -> (i1.getDescription().compareTo(i2.getDescription())));
+                    Collections.reverse(this.items);
+                    System.out.println("Sorted by description (DESC)");
                 }
                 break;
             default:

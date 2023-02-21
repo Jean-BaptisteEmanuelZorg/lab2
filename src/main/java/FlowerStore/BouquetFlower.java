@@ -33,7 +33,7 @@ public class BouquetFlower extends Item {
         builder.append(this.getItemName()).append(" ");
         builder.append(this.getPrice()).append(" ");
         builder.append(this.getDescription()).append(" ");
-        builder.append(this.getColor()).append("");
+        builder.append(this.getColor()).append("\n");
         return builder.toString();
     }
 
