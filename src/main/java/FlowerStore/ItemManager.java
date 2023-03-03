@@ -30,6 +30,10 @@ public class ItemManager {
 
     }
 
+    public List<Item> getItems() {
+        return items;
+    }
+
     @Override
     public String toString() {
         return "ItemManager\n\n" +
@@ -43,5 +47,15 @@ public class ItemManager {
             Collections.sort(this.items, comparator);
             Collections.reverse(this.items);
         }
+    }
+
+    public List<Item> compileBouquet(BouquetConfiguration configuration, List<Item> base){
+        List<Item> bouquet= new ArrayList<>();
+        for (Item tempFlower : base) {
+            bouquet.add(tempFlower);
         }
+
+        return bouquet;
+    }
+
 }
