@@ -20,13 +20,13 @@ public class Main {
         manager.addItem(new BouquetFlower(BouquetFlowerType.PEONY, 70, "perfect", "pink"));
 
         BouquetConfiguration bouquetConfiguration = new BouquetConfiguration("red",
-                new PriceRange(0, 50),
+                new PriceRange(0, 500),
                 Arrays.asList("ROSE", "TULIP", "DAISY"),
-                3,
+                9,
                 "blue paper"
         );
 
-        List<Item> bouquetProposal = manager.compileBouquet(bouquetConfiguration,
+        List<Item> bouquetProposal =  manager.compileBouquet(bouquetConfiguration,
                 manager.getItems());
 
         System.out.println(bouquetProposal);

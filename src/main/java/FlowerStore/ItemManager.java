@@ -34,6 +34,7 @@ public class ItemManager {
         return items;
     }
 
+
     @Override
     public String toString() {
         return "ItemManager\n\n" +
@@ -50,9 +51,26 @@ public class ItemManager {
     }
 
     public List<Item> compileBouquet(BouquetConfiguration configuration, List<Item> base){
+
+        // define configurations
+
         List<Item> bouquet= new ArrayList<>();
+        String color = configuration.getColor();
+        int lowerBound = configuration.getPriceRange().getLowerBound();
+        int upperBound = configuration.getPriceRange().getUpperBound();
+        List<String> flower = configuration.getFlowers();
+        int count = configuration.getCount();
+
+        // logic
+
+        int flowerTypeCount = count / flower.size();
+
         for (Item tempFlower : base) {
-            bouquet.add(tempFlower);
+            for (String f : flower) {
+                if (tempFlower.getItemName() == f && tempFlower.getColor() == color) {
+                    bouquet.add(tempFlower);
+                }
+            }
         }
 
         return bouquet;

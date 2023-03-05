@@ -8,4 +8,12 @@ public class PriceRange {
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
     }
+
+    public int getLowerBound() {
+        return lowerBound;
+    }
+
+    public int getUpperBound() {
+        return upperBound;
+    }
 }
