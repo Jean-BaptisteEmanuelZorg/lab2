@@ -17,4 +17,23 @@ public class BouquetConfiguration {
         this.paper = paper;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public PriceRange getPriceRange() {
+        return priceRange;
+    }
+
+    public List<String> getFlowers() {
+        return flowers;
+    }
+
+    public String getPaper() {
+        return paper;
+    }
+
+    public int getCount() {
+        return count;
+    }
 }
