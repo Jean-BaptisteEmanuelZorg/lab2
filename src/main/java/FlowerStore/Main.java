@@ -12,10 +12,18 @@ public class Main {
         manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 50, "great", "red"));
         manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 50, "great", "red"));
         manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 50, "great", "red"));
+        manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 50, "great", "red"));
+        manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 50, "great", "red"));
         manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 50, "great", "pink"));
         manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 50, "great", "pink"));
-        manager.addItem(new BouquetFlower(BouquetFlowerType.TULIP, 35, "fine", "red"));
+        manager.addItem(new BouquetFlower(BouquetFlowerType.TULIP, 155, "fine", "red"));
+        manager.addItem(new BouquetFlower(BouquetFlowerType.TULIP, 155, "fine", "red"));
+        manager.addItem(new BouquetFlower(BouquetFlowerType.TULIP, 155, "fine", "red"));
         manager.addItem(new BouquetFlower(BouquetFlowerType.DAISY, 44, "average", "white"));
+        manager.addItem(new BouquetFlower(BouquetFlowerType.DAISY, 44, "average", "red"));
+        manager.addItem(new BouquetFlower(BouquetFlowerType.DAISY, 44, "average", "red"));
+        manager.addItem(new BouquetFlower(BouquetFlowerType.DAISY, 44, "average", "red"));
+        manager.addItem(new BouquetFlower(BouquetFlowerType.DAISY, 44, "average", "red"));
         manager.addItem(new BouquetFlower(BouquetFlowerType.IRIS, 62, "great", "purple"));
         manager.addItem(new BouquetFlower(BouquetFlowerType.PEONY, 70, "perfect", "pink"));
 
@@ -26,7 +34,7 @@ public class Main {
                 "blue paper"
         );
 
-        List<Item> bouquetProposal =  manager.compileBouquet(bouquetConfiguration,
+        List<BouquetFlower> bouquetProposal =  manager.compileBouquet(bouquetConfiguration,
                 manager.getItems());
 
         System.out.println(bouquetProposal);
