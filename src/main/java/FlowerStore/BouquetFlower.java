@@ -1,22 +1,22 @@
 package FlowerStore;
 
 public class BouquetFlower extends Item {
-    private BouquetFlowerType itemName;
+    private BouquetFlowerType name;
     private String color;
 
-    public BouquetFlower(BouquetFlowerType itemName, int price, String description,String color) {
-        super(String.valueOf(itemName), price, description);
-        this.itemName = itemName;
+    public BouquetFlower(BouquetFlowerType name, int price, String description, String color) {
+        super(String.valueOf(name), price, description);
+        this.name = name;
         this.color = color;
     }
 
     @Override
-    public String getItemName() {
-        return String.valueOf(itemName);
+    public String getName() {
+        return String.valueOf(name);
     }
 
-    public void setItemName(BouquetFlowerType itemName) {
-        this.itemName = itemName;
+    public void setName(BouquetFlowerType name) {
+        this.name = name;
     }
 
     public String getColor() {
@@ -30,7 +30,7 @@ public class BouquetFlower extends Item {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(this.getItemName()).append(" ");
+        builder.append(this.getName()).append(" ");
         builder.append(this.getPrice()).append(" ");
         builder.append(this.getDescription()).append(" ");
         builder.append(this.getColor()).append("\n");

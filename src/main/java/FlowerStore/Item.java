@@ -1,22 +1,22 @@
 package FlowerStore;
 
 public class Item {
-    private String itemName;
+    private String name;
     private int price;
     private String description;
 
-    public Item(String itemName, int price, String description) {
-        this.itemName = itemName;
+    public Item(String name, int price, String description) {
+        this.name = name;
         this.price = price;
         this.description = description;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getName() {
+        return name;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPrice() {
