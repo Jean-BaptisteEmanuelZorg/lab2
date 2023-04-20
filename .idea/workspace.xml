@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b213211-3f62-455f-838e-85928c6ca09f" name="Changes" comment="the first version of the &quot;compileBouquet&quot; method">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/FlowerStore/ItemManager.java" afterDir="false" />
+    <list default="true" id="1b213211-3f62-455f-838e-85928c6ca09f" name="Changes" comment="Refactored itemName to name.&#10;Comparators are put into LIST_COMPARATOR directly.&#10;Sort order changed to boolean.&#10;sortByField method now have return statement.&#10;ItemManager class covered with tests.&#10;Logger added.&#10;First block of logic from compileBouquet method rewritten using streams.&#10;And other minor changes according to comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetFlower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetFlower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/ItemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/ItemManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FlowerStore/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/SortOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FlowerStore/ItemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FlowerStore/ItemManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678303963300</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactored itemName to name.&#10;Comparators are put into LIST_COMPARATOR directly.&#10;Sort order changed to boolean.&#10;sortByField method now have return statement.&#10;ItemManager class covered with tests.&#10;Logger added.&#10;First block of logic from compileBouquet method rewritten using streams.&#10;And other minor changes according to comments">
+      <created>1681835451906</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681835451906</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +220,8 @@
     <MESSAGE value="Completed sortByField method" />
     <MESSAGE value="&quot;getColor&quot; method problem" />
     <MESSAGE value="the first version of the &quot;compileBouquet&quot; method" />
-    <option name="LAST_COMMIT_MESSAGE" value="the first version of the &quot;compileBouquet&quot; method" />
+    <MESSAGE value="Refactored itemName to name.&#10;Comparators are put into LIST_COMPARATOR directly.&#10;Sort order changed to boolean.&#10;sortByField method now have return statement.&#10;ItemManager class covered with tests.&#10;Logger added.&#10;First block of logic from compileBouquet method rewritten using streams.&#10;And other minor changes according to comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored itemName to name.&#10;Comparators are put into LIST_COMPARATOR directly.&#10;Sort order changed to boolean.&#10;sortByField method now have return statement.&#10;ItemManager class covered with tests.&#10;Logger added.&#10;First block of logic from compileBouquet method rewritten using streams.&#10;And other minor changes according to comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

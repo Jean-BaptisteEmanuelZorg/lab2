@@ -5,12 +5,10 @@ import org.slf4j.*;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
         ItemManager manager = new ItemManager();
         manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 55, "special", "blue"));
@@ -41,7 +39,7 @@ public class Main {
                 9,
                 "blue paper"
         );
-        List<BouquetFlower> bouquetProposal =  manager.compileBouquet(bouquetConfiguration,
+        List<BouquetFlower> bouquetProposal = manager.compileBouquet(bouquetConfiguration,
                 manager.getItems());
         log.info("{}", bouquetProposal);
 

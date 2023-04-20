@@ -3,8 +3,6 @@ package FlowerStore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +14,7 @@ class ItemManagerTest {
     static ItemManager manager = new ItemManager();
 
     @BeforeEach
-    public void addingItemsTest(){
+    public void addingItemsTest() {
 
         manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 55, "special", "blue"));
         manager.addItem(new BouquetFlower(BouquetFlowerType.ROSE, 50, "great", "red"));
@@ -41,72 +39,80 @@ class ItemManagerTest {
         manager.addItem(new Soil("dirt", 78, "some soil", 4.5, "1,2,3", 5, 5, SoilType.UNIVERSAL));
 
     }
+
     @Test
-    public void addedItemTest(){
+    public void addedItemTest() {
         assertFalse(manager.getItems().isEmpty());
     }
+
     @Test
-    public void removeItemById(){
+    public void removeItemById() {
         Item testItem = manager.getItemById(1);
         manager.removeItemById(0);
         assertEquals(testItem, manager.getItemById(0));
     }
+
     @Nested
-    class SortByFieldTest{
+    class SortByFieldTest {
         @Test
-        public void sortByNameAscTest(){
+        public void sortByNameAscTest() {
             List<Item> names = manager.getItems().stream()
-                    .sorted((n1, n2)->n1.getName().compareTo(n2.getName()))
+                    .sorted((n1, n2) -> n1.getName().compareTo(n2.getName()))
                     .collect(Collectors.toList());
             List<Item> sortedByName = manager.sortByField("name", false);
             for (int i = 0; i < sortedByName.size(); i++) {
                 assertEquals(names.get(i).getName(), sortedByName.get(i).getName());
             }
         }
+
         @Test
-        public void sortByNameDescTest(){
+        public void sortByNameDescTest() {
             List<Item> names = manager.getItems().stream()
-                    .sorted((n1, n2)->n2.getName().compareTo(n1.getName()))
+                    .sorted((n1, n2) -> n2.getName().compareTo(n1.getName()))
                     .collect(Collectors.toList());
             List<Item> sortedByName = manager.sortByField("name", true);
             for (int i = 0; i < sortedByName.size(); i++) {
                 assertEquals(names.get(i).getName(), sortedByName.get(i).getName());
             }
         }
+
         @Test
-        public void sortByPriceAscTest(){
+        public void sortByPriceAscTest() {
             List<Item> prices = manager.getItems().stream()
-                    .sorted((n1, n2)->n1.getPrice() - (n2.getPrice()))
+                    .sorted((n1, n2) -> n1.getPrice() - (n2.getPrice()))
                     .collect(Collectors.toList());
             List<Item> sortedByPrice = manager.sortByField("price", false);
             for (int i = 0; i < sortedByPrice.size(); i++) {
                 assertEquals(prices.get(i).getPrice(), (sortedByPrice.get(i).getPrice()));
             }
         }
+
         @Test
-        public void sortByPriceDescTest(){
+        public void sortByPriceDescTest() {
             List<Item> prices = manager.getItems().stream()
-                    .sorted((n1, n2)->n2.getPrice() - (n1.getPrice()))
+                    .sorted((n1, n2) -> n2.getPrice() - (n1.getPrice()))
                     .collect(Collectors.toList());
             List<Item> sortedByPrice = manager.sortByField("price", true);
             for (int i = 0; i < sortedByPrice.size(); i++) {
                 assertEquals(prices.get(i).getPrice(), (sortedByPrice.get(i).getPrice()));
             }
         }
+
         @Test
-        public void sortByDescriptionAscTest(){
+        public void sortByDescriptionAscTest() {
             List<Item> descriptions = manager.getItems().stream()
-                    .sorted((n1, n2)->n1.getDescription().compareTo(n2.getDescription()))
+                    .sorted((n1, n2) -> n1.getDescription().compareTo(n2.getDescription()))
                     .collect(Collectors.toList());
             List<Item> sortedByDescription = manager.sortByField("description", false);
             for (int i = 0; i < sortedByDescription.size(); i++) {
                 assertEquals(descriptions.get(i).getDescription(), sortedByDescription.get(i).getDescription());
             }
         }
+
         @Test
-        public void sortByDescriptionDescTest(){
+        public void sortByDescriptionDescTest() {
             List<Item> descriptions = manager.getItems().stream()
-                    .sorted((n1, n2)->n2.getDescription().compareTo(n1.getDescription()))
+                    .sorted((n1, n2) -> n2.getDescription().compareTo(n1.getDescription()))
                     .collect(Collectors.toList());
             List<Item> sortedByDescription = manager.sortByField("description", true);
             for (int i = 0; i < sortedByDescription.size(); i++) {
@@ -114,38 +120,43 @@ class ItemManagerTest {
             }
         }
     }
+
     @Nested
-    class CompileBouquetTest{
+    class CompileBouquetTest {
         BouquetConfiguration bouquetConfiguration = new BouquetConfiguration("red",
                 new PriceRange(333, 500),
                 Arrays.asList("ROSE", "TULIP", "DAISY"),
                 9,
                 "blue paper"
         );
-        List<BouquetFlower> bouquetProposal =  manager.compileBouquet(bouquetConfiguration,
+        List<BouquetFlower> bouquetProposal = manager.compileBouquet(bouquetConfiguration,
                 manager.getItems());
+
         @Test
-        public void compileBouquetUpperBoundFitTest(){
+        public void compileBouquetUpperBoundFitTest() {
             int totalPrice = 0;
-            for(BouquetFlower flower: bouquetProposal){
+            for (BouquetFlower flower : bouquetProposal) {
                 totalPrice += flower.getPrice();
             }
             assertTrue(bouquetConfiguration.getPriceRange().getUpperBound() >= totalPrice);
         }
+
         @Test
-        public void compileBouquetLowerBoundFitTest(){
+        public void compileBouquetLowerBoundFitTest() {
             int totalPrice = 0;
-            for(BouquetFlower flower: bouquetProposal){
+            for (BouquetFlower flower : bouquetProposal) {
                 totalPrice += flower.getPrice();
             }
             assertTrue(bouquetConfiguration.getPriceRange().getLowerBound() <= totalPrice);
         }
+
         @Test
-        public void compileBouquetFlowerCountTest(){
+        public void compileBouquetFlowerCountTest() {
             assertEquals(bouquetConfiguration.getCount(), bouquetProposal.size());
         }
+
         @Test
-        public void compileBouquetReplacerTest(){
+        public void compileBouquetReplacerTest() {
 
         }
     }

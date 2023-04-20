@@ -1,9 +1,10 @@
 package FlowerStore;
 
 import org.slf4j.*;
+
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ItemManager {
     private List<Item> items;
@@ -25,21 +26,26 @@ public class ItemManager {
     public void addItem(Item item) {
         this.items.add(item);
     }
+
     public void removeItemById(Integer id) {
         this.items.remove(this.items.get(id));
 
     }
-    public Item getItemById(Integer id){
+
+    public Item getItemById(Integer id) {
         return this.items.get(id);
     }
+
     public List<Item> getItems() {
         return items;
     }
+
     @Override
     public String toString() {
         return "ItemManager\n\n" +
                 "items:\n" + items.toString();
     }
+
     public List<Item> sortByField(String field, boolean reverse) {
         Comparator<Item> comparator = LIST_COMPARATOR.get(field);
         this.items.sort(comparator);
@@ -49,43 +55,27 @@ public class ItemManager {
         return this.items;
     }
 
-    public List<BouquetFlower> compileBouquet(BouquetConfiguration configuration, List<Item> base){
-
-        // define configurations
+    public List<BouquetFlower> compileBouquet(BouquetConfiguration configuration, List<Item> base) {
 
         List<BouquetFlower> baseFlowers = base.stream()
                 .filter(item -> item instanceof BouquetFlower)
                 .map(item -> (BouquetFlower) item)
                 .collect(Collectors.toList());
-        List<BouquetFlower> bouquetFlowers= new ArrayList<>();
+        List<BouquetFlower> bouquetFlowers = new ArrayList<>();
         String color = configuration.getColor();
         int lowerBound = configuration.getPriceRange().getLowerBound();
         int upperBound = configuration.getPriceRange().getUpperBound();
         List<String> flowers = configuration.getFlowers();
         int count = configuration.getCount();
         int flowerTypeCount = count / flowers.size();
-        final int[] priceTotal = {0};
+        AtomicInteger priceTotal = new AtomicInteger();
 
-        // logic
 
-//        for (String flowerType : flowers) {
-//            int eachTypeIterator = 0;
-//            for (BouquetFlower tempFlower : baseFlowers){
-//                if (Objects.equals(tempFlower.getName(), flowerType) &&
-//                        Objects.equals(tempFlower.getColor(), color) &&
-//                        eachTypeIterator < flowerTypeCount) {
-//                        bouquetFlowers.add(tempFlower);
-//                        priceTotal += tempFlower.getPrice();
-//                        log.debug("priceTotal - {}", priceTotal);
-//                        eachTypeIterator++;
-//                }
-//            }
-//        }
         bouquetFlowers = flowers.stream()
                 .map(f -> baseFlowers.stream()
                         .filter(b -> b.getName().equals(f) && b.getColor().equals(color))
                         .limit(flowerTypeCount)
-                        .peek(b -> priceTotal[0] += b.getPrice())
+                        .peek(b -> priceTotal.addAndGet(b.getPrice()))
                         .collect(Collectors.toList()))
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
@@ -97,24 +87,24 @@ public class ItemManager {
         baseFlowers.sort(comparator.reversed());
 
         int loopCounter = 0;
-        while (priceTotal[0] > upperBound){
-            for (BouquetFlower bouquetFlower : bouquetFlowers){
-                for (BouquetFlower tempFlower : baseFlowers){
-                    if(bouquetFlower.getPrice() > tempFlower.getPrice()){
+        while (priceTotal.get() > upperBound) {
+            for (BouquetFlower bouquetFlower : bouquetFlowers) {
+                for (BouquetFlower tempFlower : baseFlowers) {
+                    if (bouquetFlower.getPrice() > tempFlower.getPrice()) {
                         bouquetFlowers.set(bouquetFlowers.indexOf(bouquetFlower), tempFlower);
-                        priceTotal[0] -= bouquetFlower.getPrice();
-                        priceTotal[0] += tempFlower.getPrice();
+                        priceTotal.addAndGet(-bouquetFlower.getPrice());
+                        priceTotal.addAndGet(tempFlower.getPrice());
                         baseFlowers.remove(tempFlower);
-                        log.trace("priceTotal - {}", priceTotal[0]);
+                        log.trace("priceTotal - {}", priceTotal);
                         break;
                     }
                 }
-                if(priceTotal[0] < upperBound){
+                if (priceTotal.get() < upperBound) {
                     break;
                 }
             }
             loopCounter++;
-            if (loopCounter == count){
+            if (loopCounter == count) {
                 break;
             }
         }
