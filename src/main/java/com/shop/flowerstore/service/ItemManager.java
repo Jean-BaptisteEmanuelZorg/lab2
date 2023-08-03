@@ -1,11 +1,17 @@
-package FlowerStore;
+package com.shop.flowerstore.service;
 
+import com.shop.flowerstore.config.ItemNotFoundException;
+import com.shop.flowerstore.model.BouquetConfiguration;
+import com.shop.flowerstore.model.BouquetFlower;
+import com.shop.flowerstore.model.Item;
 import org.slf4j.*;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+@Service
 public class ItemManager {
     private List<Item> items;
     private static final Logger log = LoggerFactory.getLogger(ItemManager.class);
@@ -33,7 +39,10 @@ public class ItemManager {
     }
 
     public Item getItemById(Integer id) {
-        return this.items.get(id);
+        if (this.items.get(id) != null) {
+            return this.items.get(id);
+        }
+        else throw new ItemNotFoundException("No Item by ID: " + id);
     }
 
     public List<Item> getItems() {
@@ -56,12 +65,11 @@ public class ItemManager {
     }
 
     public List<BouquetFlower> compileBouquet(BouquetConfiguration configuration, List<Item> base) {
-
         List<BouquetFlower> baseFlowers = base.stream()
                 .filter(item -> item instanceof BouquetFlower)
                 .map(item -> (BouquetFlower) item)
                 .collect(Collectors.toList());
-        List<BouquetFlower> bouquetFlowers = new ArrayList<>();
+        List<BouquetFlower> bouquetFlowers;
         String color = configuration.getColor();
         int lowerBound = configuration.getPriceRange().getLowerBound();
         int upperBound = configuration.getPriceRange().getUpperBound();

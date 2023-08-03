@@ -1,4 +1,4 @@
-package FlowerStore;
+package com.shop.flowerstore.model;
 
 public class Pot extends Item{
     private int diameter;

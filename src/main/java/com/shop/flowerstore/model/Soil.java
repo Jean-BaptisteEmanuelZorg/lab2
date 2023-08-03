@@ -1,4 +1,4 @@
-package FlowerStore;
+package com.shop.flowerstore.model;
 
 public class Soil extends Item{
     private double acidity;
