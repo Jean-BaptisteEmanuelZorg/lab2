@@ -1,8 +1,15 @@
-package FlowerStore;
+package com.shop.flowerstore.model;
+
+
+import jakarta.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
 
 public class Item {
     private String name;
+    @Range(min = 0, message = "Price can't be below 0")
     private int price;
+    @NotEmpty(message = "Please enter description")
     private String description;
 
     public Item(String name, int price, String description) {

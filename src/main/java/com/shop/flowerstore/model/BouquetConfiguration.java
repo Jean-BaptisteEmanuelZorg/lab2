@@ -1,4 +1,8 @@
-package FlowerStore;
+package com.shop.flowerstore.model;
+
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
@@ -7,6 +11,8 @@ public class BouquetConfiguration {
     private PriceRange priceRange;
     private List<String> flowers;
     private String paper;
+    @NotNull(message = "Count can't be NULL")
+    @Size(min = 2, max = 5, message = "Count must be 2-5")
     private int count;
 
     public BouquetConfiguration(String color, PriceRange priceRange, List<String> flowers, int count, String paper) {

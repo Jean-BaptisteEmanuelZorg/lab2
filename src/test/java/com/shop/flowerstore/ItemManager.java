@@ -1,5 +1,7 @@
-package FlowerStore;
+package com.shop.flowerstore;
 
+import com.shop.flowerstore.model.*;
+import com.shop.flowerstore.service.ItemManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -126,7 +128,7 @@ class ItemManagerTest {
         BouquetConfiguration bouquetConfiguration = new BouquetConfiguration("red",
                 new PriceRange(333, 500),
                 Arrays.asList("ROSE", "TULIP", "DAISY"),
-                9,
+                6,
                 "blue paper"
         );
         List<BouquetFlower> bouquetProposal = manager.compileBouquet(bouquetConfiguration,

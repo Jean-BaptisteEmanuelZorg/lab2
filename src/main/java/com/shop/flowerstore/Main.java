@@ -1,6 +1,8 @@
-package FlowerStore;
+package com.shop.flowerstore;
 
 
+import com.shop.flowerstore.model.*;
+import com.shop.flowerstore.service.ItemManager;
 import org.slf4j.*;
 
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package FlowerStore;
+package com.shop.flowerstore.model;
 
 public class PriceRange {
     private int lowerBound;
