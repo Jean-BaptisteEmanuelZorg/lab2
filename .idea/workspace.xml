@@ -6,16 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="1b213211-3f62-455f-838e-85928c6ca09f" name="Changes" comment="priceTotal atomic now.&#10;Code cleaned and formatted">
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_19_19_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_19_19_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_19_19__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/lab2/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/lab2/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/FlowerstoreApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/config/GlobalExceptionHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/config/ItemNotFoundException.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/config/SecurityConfig.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/controller/CustomResponseEntity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/controller/StoreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/model/BouquetFlower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/shop/flowerstore/FlowerstoreWebApplicationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/model/BouquetConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetFlower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/model/BouquetFlower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetFlower.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/BouquetFlowerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/model/BouquetFlowerType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/HousePlant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/model/HousePlant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FlowerStore/HousePlantType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shop/flowerstore/model/HousePlantType.java" afterDir="false" />
